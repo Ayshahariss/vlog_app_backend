@@ -2,6 +2,7 @@ const  express = require("express")
 const  cors =  require ("cors")
 const  mongoose = require("mongoose")
 const  vlogRoute = require("./controllers/vlogRoute")
+const postRoute = require("./controllers/postRouter")
 
 const app = express()
 app.use(express.json())
@@ -12,6 +13,7 @@ mongoose.connect("mongodb+srv://aysha-haris:Captainthor432@cluster0.3vwom3n.mong
 {useNewUrlParser:true})
 
 app.use("/api/users",vlogRoute)
+app.use("/api/post",postRoute)
 
 
 app.listen(3002,()=>{
